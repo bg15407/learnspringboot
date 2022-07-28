@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landon Hotel: Guests</title>
+</head>
+<body>
+<h1>Guest List</h1>
+
+<table class="table-auto border-separate border-spacing-2 bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Address</th>
+        <th>Phone Number</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="guest: ${guestsList}">
+        <td th:text="${guest.firstName}">First Name</td>
+        <td th:text="${guest.lastName}">Last Name</td>
+        <td th:text="${guest.emailAddress}">Email Address</td>
+        <td th:text="${guest.phoneNumber}">Phone Number</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
