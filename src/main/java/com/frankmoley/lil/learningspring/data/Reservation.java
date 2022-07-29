@@ -10,7 +10,7 @@ public class Reservation {
     @Id
     private long reservationId;
     private long roomId;
-    private long guestId;
+    private String guestId;
     private Date reservationDate;
 
     public long getReservationId() {
@@ -29,11 +29,11 @@ public class Reservation {
         this.roomId = roomId;
     }
 
-    public long getGuestId() {
+    public String getGuestId() {
         return guestId;
     }
 
-    public void setGuestId(long guestId) {
+    public void setGuestId(String guestId) {
         this.guestId = guestId;
     }
 

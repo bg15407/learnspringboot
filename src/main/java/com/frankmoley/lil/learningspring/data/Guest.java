@@ -6,7 +6,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Guest {
     @Id
-    private long guestId;
+    private String id;
+
     private String firstName;
     private String lastName;
     private String emailAddress;
@@ -15,12 +16,22 @@ public class Guest {
     private String state;
     private String phoneNumber;
 
-    public long getGuestId() {
-        return guestId;
+    public Guest(String firstName, String lastName, String emailAddress, String address, String country, String state, String phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+        this.address = address;
+        this.country = country;
+        this.state = state;
+        this.phoneNumber = phoneNumber;
     }
 
-    public void setGuestId(long guestId) {
-        this.guestId = guestId;
+    public String getId() {
+        return id;
+    }
+
+    public void setGuestId(String id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -82,7 +93,7 @@ public class Guest {
     @Override
     public String toString() {
         return "Guest{" +
-                "guestId=" + guestId +
+                "guestId=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
