@@ -1,25 +1,16 @@
 package com.frankmoley.lil.learningspring.data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.sql.Date;
 
-@Entity
-@Table(name="RESERVATION")
+@Document
 public class Reservation {
     @Id
-    @Column(name="RESERVATION_ID")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long reservationId;
-    @Column(name="ROOM_ID")
     private long roomId;
-    @Column(name="GUEST_ID")
     private long guestId;
-    @Column(name="RES_DATE")
     private Date reservationDate;
 
     public long getReservationId() {
